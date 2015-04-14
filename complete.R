@@ -6,7 +6,7 @@ complete  <- function(directory, id = 1:332) {
         #creates an empty data frame for cbind & rbind
         dat <- data.frame() 
         dat2 <- data.frame() 
-        # Looping 
+        # Looping with For loop
         for (i in id) {                                
                 dat <- fread(lsFileFull[i])
                 x <- sum(complete.cases(dat))
