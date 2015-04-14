@@ -5,7 +5,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
         require (data.table)
         # getting list of file
         lsFileFull <- list.files (directory, full.names = TRUE)
-        #creates an empty data frame for cbind & rbind
+        #creates an empty data frame for rbind
         dat <- data.frame() 
         dat2 <- data.frame() 
         # Looping 
@@ -14,8 +14,6 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
                 dat2 <- data.frame(rbind(dat2,dat))
         }
         # return result 
-        
-        
         x <-  paste(c(pollutant),  collapse="");
         mean( dat2[[x, exact = FALSE]], na.rm = TRUE)
         
